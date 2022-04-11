@@ -10,6 +10,7 @@ import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
 import Comments from './user/Comments'
+import Events from './user/Events'
 
 const MainRouter = () => {
     return (<div>
@@ -19,6 +20,7 @@ const MainRouter = () => {
         <Route path="/users" component={Users}/>
         <Route path="/signup" component={Signup}/>
         <PrivateRoute path="/comments" component={Comments}/>
+        <PrivateRoute path="/events" component={Events}/>
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>

@@ -65,7 +65,7 @@ export default function Comments({}) {
             
         } else {
             setUser(data)
-            setComments({...comments, postedComments: data.postedComments})
+            setComments({...comments, collectionOfComments: data.collectionOfComments})
         }
       })
     return function cleanup(){
@@ -75,8 +75,8 @@ export default function Comments({}) {
   const clickSubmit = () => {
     const user = {
         comment: comments.comment || undefined,
-        postedComments: comments.postedComments|| undefined
-
+        postedComments: comments.postedComments|| undefined,
+        collectionOfComments: comments.collectionOfComments|| undefined
     }
     update({
      userId:id
@@ -89,6 +89,7 @@ export default function Comments({}) {
         console.log('this here is fucked')
         setComments({...comments, comment: data.comment})
         setComments({...comments, postedComments: data.postedComments})
+        setComments({...comments, collectionOfComments: data.collectionOfComments})
       }
 
     })
@@ -101,7 +102,7 @@ export default function Comments({}) {
   }
   const commentCollection = () => {
     let collect = comments.collectionOfComments
-    collect.map(comments.postedComments)
+    collect.push(comments.postedComments)
     setComments({...comments, collectionOfComments: collect})
   }
   
@@ -129,6 +130,7 @@ export default function Comments({}) {
                       
                       </ListItemSecondaryAction>
                     </ListItem>
+                    
                     <TextField
                     id='comment-box'
                     label="Comment"
@@ -137,7 +139,7 @@ export default function Comments({}) {
                     onChange={handleChange('comment')}
                     margin="normal"
                     >
-                        Comment Here
+                        
                     </TextField><CardActions>
           <Button color="primary" variant="contained" onClick={() => {updatePostedComments();commentCollection();clickSubmit()}} className={classes.submit}>Comment</Button>
         </CardActions>
@@ -160,20 +162,24 @@ export default function Comments({}) {
                         </Avatar>
                       </ListItemAvatar>
                       <ListItemText primary={item.name}/>
-                      <ListItemSecondaryAction>
+                      
                       <TextField
                       disabled
                       type='text'
-                      value={comments.postedComments}
+                      value={comments.collectionOfComments}
                       onChange= {handleChange('postedComments')}
                       
                       ></TextField>
+                      
                       <IconButton>
                      <MoodIcon/>
                       </IconButton>
                       <IconButton>
                           <MoodBadIcon/>
                       </IconButton>
+                      <ListItemSecondaryAction>
+                      
+                      
                       </ListItemSecondaryAction>
                     </ListItem>
                      })
