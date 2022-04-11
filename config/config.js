@@ -1,5 +1,6 @@
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://Drasi:kekw100@coursework.gymxi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 const config = {
+  MONGODB_URI: "mongodb+srv://Drasi:kekw100@coursework.gymxi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   env: process.env.NODE_ENV || 'development',
   port: process.env.PORT || 3000,
   jwtSecret: process.env.JWT_SECRET || "YOUR_secret_key",
