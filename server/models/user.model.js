@@ -37,7 +37,22 @@ const UserSchema = new mongoose.Schema({
     created: {
       type: Date,
       default: Date.now
-    }
+    },
+  
+  comment:{
+    type: String,
+    trim: true
+
+  },
+  postedComments:{
+    type: Array,
+    trim: true
+  },
+  
+  collectionOfComments:{
+    type: Array,
+    trim: true
+  }
 })
 
 UserSchema

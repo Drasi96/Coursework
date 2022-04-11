@@ -18,7 +18,7 @@ const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="h6" color="inherit">
-        Lab 6
+        CourseWork 
       </Typography>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
@@ -27,6 +27,9 @@ const Menu = withRouter(({history}) => (
       </Link>
       <Link to="/users">
         <Button style={isActive(history, "/users")}>Users</Button>
+      </Link>
+      <Link to = "/comments">
+      <Button style={isActive(history, "/comments")}>Comment Section</Button>
       </Link>
       {
         !auth.isAuthenticated() && (<span>
