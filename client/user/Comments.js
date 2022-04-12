@@ -18,7 +18,7 @@ import {Link} from 'react-router-dom'
 import {list} from './api-user.js'
 import auth from './../auth/auth-helper'
 import {read, update} from './api-user.js'
-import { TextField } from '@material-ui/core'
+import { CardContent, TextField } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -28,6 +28,9 @@ const useStyles = makeStyles(theme => ({
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.openTitle
+  },
+  textField:{
+    
   }
 }))
 
@@ -155,7 +158,7 @@ export default function Comments({}) {
         </Typography>
         <List dense>
         {users.map((item, i) => {
-          return <ListItem button>
+          return <ListItem>
                       <ListItemAvatar>
                         <Avatar>
                           <Person/>
@@ -163,11 +166,14 @@ export default function Comments({}) {
                       </ListItemAvatar>
                       <ListItemText primary={item.name}/>
                       
+                      <CardContent>
                       <TextField
-                      disabled
+                       InputProps={{
+                        readOnly: true,
+                      }}
                       type='text'
                       value={comments.collectionOfComments}
-                      onChange= {handleChange('postedComments')}
+                      
                       
                       ></TextField>
                       
@@ -177,14 +183,15 @@ export default function Comments({}) {
                       <IconButton>
                           <MoodBadIcon/>
                       </IconButton>
+                      </CardContent>
                       <ListItemSecondaryAction>
-                      
-                      
                       </ListItemSecondaryAction>
                     </ListItem>
                      })
                       }
-                    
+                    <ListItem>
+
+                    </ListItem>
                     </List> 
         </Paper>
       
