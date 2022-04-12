@@ -103,7 +103,7 @@ export default function Comments({}) {
     setComments({...comments, postedComments: test})
 
   }
-  const commentCollection = () => {
+  const commentCollection = () =>{
     let collect = comments.collectionOfComments
     collect.push(comments.postedComments)
     setComments({...comments, collectionOfComments: collect})
@@ -111,6 +111,15 @@ export default function Comments({}) {
   
   const handleChange = postedComments => event => {
     setComments({...comments, [postedComments]: event.target.value})
+  }
+  const deleteComment = () =>{
+    let array = comments.collectionOfComments
+    let index = array.indexOf(comments.postedComments)
+    if (index !== -1){
+      array.splice(index,1)
+      setComments({...comments,collectionOfComments:array})
+    }  
+    console.log('delete')  
   }
 
 
@@ -180,7 +189,8 @@ export default function Comments({}) {
                       <IconButton>
                      <MoodIcon/>
                       </IconButton>
-                      <IconButton>
+                      <IconButton
+                      onClick={deleteComment}>
                           <MoodBadIcon/>
                       </IconButton>
                       </CardContent>
