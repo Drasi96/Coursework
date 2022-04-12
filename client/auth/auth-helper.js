@@ -1,6 +1,9 @@
+// checks the user
+
 import { signout } from './api-auth.js'
 
 const auth = {
+  // is the user signed in
   isAuthenticated() {
     if (typeof window == "undefined")
       return false
@@ -10,11 +13,13 @@ const auth = {
     else
       return false
   },
+  // signing the user in
   authenticate(jwt, cb) {
     if (typeof window !== "undefined")
       sessionStorage.setItem('jwt', JSON.stringify(jwt))
     cb()
   },
+  // signing the user out
   clearJWT(cb) {
     if (typeof window !== "undefined")
       sessionStorage.removeItem('jwt')

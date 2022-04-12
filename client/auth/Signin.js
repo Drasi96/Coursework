@@ -1,3 +1,4 @@
+// Signing in class
 import React, {useState} from 'react'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -45,7 +46,7 @@ export default function Signin(props) {
       error: '',
       redirectToReferrer: false
   })
-
+  //submit function is called when pressed the button
   const clickSubmit = () => {
     const user = {
       email: values.email || undefined,

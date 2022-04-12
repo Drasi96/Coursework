@@ -1,3 +1,4 @@
+// All the users Page
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -32,7 +33,7 @@ export default function Users() {
   useEffect(() => {
     const abortController = new AbortController()
     const signal = abortController.signal
-
+    //Listing all the existing users
     list(signal).then((data) => {
       if (data && data.error) {
         console.log(data.error)

@@ -1,3 +1,4 @@
+// Declaring the different scenarios with the user for example signed up, not found etc
 import User from '../models/user.model'
 import extend from 'lodash/extend'
 import errorHandler from './../helpers/dbErrorHandler'

@@ -1,3 +1,5 @@
+// api for authorazation reasons
+
 const signin = async (user) => {
   try {
     let response = await fetch('/auth/signin/', {

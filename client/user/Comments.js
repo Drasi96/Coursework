@@ -1,3 +1,4 @@
+//Comments Page for users who are signed in
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -112,6 +113,7 @@ export default function Comments({}) {
   const handleChange = postedComments => event => {
     setComments({...comments, [postedComments]: event.target.value})
   }
+  //not worrking
   const deleteComment = () =>{
     let array = comments.collectionOfComments
     let index = array.indexOf(comments.postedComments)

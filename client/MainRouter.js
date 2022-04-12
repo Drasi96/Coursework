@@ -1,3 +1,6 @@
+// The router of the page 
+// The path to the pages are declared here 
+// If a path of the page is private only users can access it you have to be signed in to access it
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import Home from './core/Home'

@@ -1,3 +1,4 @@
+// Events page
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -35,6 +36,8 @@ export default function Events() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  // I wanted to add another event if the plus button is pressed
+  // but it's not working
   const addEvent = () =>{
       console.log('pressed the button')
     return(

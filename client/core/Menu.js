@@ -1,3 +1,4 @@
+// Navbar of the website
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -14,6 +15,7 @@ const isActive = (history, path) => {
   else
     return {color: '#ffffff'}
 }
+//Buttons of the Navbar
 const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>

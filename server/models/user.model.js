@@ -1,3 +1,6 @@
+// Declaring the values of the database
+// Thinking back I should have created another two Schema one for comments and one events
+// Probably that's why most of the features are not working
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 
@@ -48,7 +51,7 @@ const UserSchema = new mongoose.Schema({
     type: Array,
     trim: true
   },
-  
+
   collectionOfComments:{
     type: Array,
     trim: true

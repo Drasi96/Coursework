@@ -1,3 +1,4 @@
+// Express for sign in and out
 import express from 'express'
 import authCtrl from '../controllers/auth.controller'
 

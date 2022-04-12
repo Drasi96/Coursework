@@ -1,11 +1,11 @@
-//import React from 'react'
+//Main page of the website
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import myImg from './../assets/images/myimage.png'
+import myImg from './../assets/images/centipede.jpg'
 import {Link} from 'react-router-dom'
 import {joke} from '../thirdparty/api-dadjokes.js'
 
@@ -68,14 +68,14 @@ export default function Home(){
     return (
         <Card className={classes.card}>
           <Typography variant="h6" className={classes.title}>
-            Home Page
+            LOVE FOR THE UGLIES!!!!!!!
           </Typography>
           <Link to="/users"> Users </Link>
           <CardMedia className={classes.media} image={myImg} title="My Image"/>
           <Typography variant="body2" component="p" className={classes.credit} color="textSecondary">Photo: Chompster</Typography>
           <CardContent>
             <Typography variant="body1" component="p">
-              Welcome to Lab 6 home page.
+              Welcome to the Love for the uglies home page
               <div>
               {jokes.joke}
               </div>

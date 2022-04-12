@@ -1,3 +1,4 @@
+// Sign up page
 import React, {useState} from 'react'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -54,7 +55,7 @@ export default function Signup() {
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value })
   }
-
+  // Creating a new user and adding it to the database
   const clickSubmit = () => {
     const user = {
       name: values.name || undefined,

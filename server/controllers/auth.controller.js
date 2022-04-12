@@ -1,3 +1,4 @@
+// Declaring what happens if there is an authorization problem
 import User from '../models/user.model'
 import jwt from 'jsonwebtoken'
 import expressJwt from 'express-jwt'

@@ -1,3 +1,4 @@
+// The user api for handling request
 const create = async (user) => {
   try {
       let response = await fetch('/api/users/', {
